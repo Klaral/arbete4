@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+ 
+    <title>inlämning4</title>
+    <script src="objekt.js"></script>
+    
+</head>
+<body>
+
+ 
+    <!--lägga till-->
+    
+    <p>
+        Lägg till
+    <input id="inputNamn" type="text" placeholder="namn"/>
+    <input id="inputPris" type="text" placeholder="pris"/>    
+        <button id="addButton">Lägg till...</button>
+    </p>    
+    
+    
+    <!--sortering-->
+    
+    <p>
+        Sortera efter
+    <button id="btnNamn">Namn</button> 
+    <button id="btnPris">Pris</button> 
+    </p>
+    
+    
+    
+   <!--firebase--> 
+    
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDHIDcNpnYUeYkWUoHfhfYWratQ5PA5IQc",
+    authDomain: "uppgift4-62573.firebaseapp.com",
+    databaseURL: "https://uppgift4-62573.firebaseio.com",
+    projectId: "uppgift4-62573",
+    storageBucket: "uppgift4-62573.appspot.com",
+    messagingSenderId: "130263104002"
+  };
+  firebase.initializeApp(config);
+</script>
+
+      
+</body>
+</html>
