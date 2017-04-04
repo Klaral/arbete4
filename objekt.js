@@ -23,11 +23,11 @@ window.onload = function(){
   var btnPris = document.getElementById("btnPris");
  // var currDate = new Date();
   var uppgift4 = {
-    namn: btnNamn.value,
-            pris: btnPris.value
+            namn: btnNamn.value,
+            pris: Number(btnPris.value)
   }
   fb.ref('uppgift4/').push(uppgift4);
-  debugger
+ 
 }
     
     firebase.database().ref('uppgift4/').on('child_added', function(snapshot, prevChildKey){
