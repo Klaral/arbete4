@@ -4,22 +4,33 @@ window.onload = function(){
     var inputNamn = document.getElementById("inputNamn");
     var inputPris = document.getElementById("inputPris");
     var addButton = document.getElementById("addButton");
-    var btnNamn = document.getElementById("btnNamn");
-    var btnPris = document.getElementById("btnPris");
     var tableVisaNamn = document.getElementById("tableVisaNamn")
     var inputAntalResultat = document.getElementById('inputAntalResultat');
     
     
     /**lägga till**/
-    addButton.addEventListener("click", function(event){
+   /** addButton.addEventListener("click", function(event){
         console.log("Lagt till...");
         firebase.database().ref('Uppgift4/').push({
             namn: namn.value,
             pris: pris.value
         });
-    });
+    });**/
+    function submit(){
+  var pris = document.getElementById("pris");
+  var fb = firebase.database();
+  var btnNamn= document.getElementById("namn");
+  var btnPris = document.getElementById("btnPris");
+ // var currDate = new Date();
+  var uppgift4 = {
+    namn: namn.value,
+            pris: pris.value
+  }
+  fb.ref('uppgift4/').push(uppgift4);
+  debugger
+}
     
-    firebase.database().ref('Uppgift4/').on('child_added', function(snapshot, prevChildKey){
+    firebase.database().ref('uppgift4/').on('child_added', function(snapshot, prevChildKey){
             console.log('Första gången eller ändring i databasen. prevChildKey: ' + prevChildKey);
 				var data = snapshot.val();
             addToTable(data);
@@ -30,7 +41,7 @@ window.onload = function(){
   var outputNumber = document.getElementById("inputAntalResultat");
   var fb = firebase.database();
 //do new stuff, put debugger before and then check on console
-  fb.ref('Uppgift4/').orderByChild(`${key}`).limitToFirst(Number(outputNumber.value)).once('value')//get once all values, read all orderByChild("name")
+  fb.ref('uppgift4/').orderByChild(`${key}`).limitToFirst(Number(outputNumber.value)).once('value')//get once all values, read all orderByChild("name")
   .then(function(snapshot){
     //after snapshot that get all values then can clean
     var table = document.getElementById("tableVisaNamn");
