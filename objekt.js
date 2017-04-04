@@ -16,8 +16,8 @@ window.onload = function(){
             pris: pris.value
         });
     });**/
-    function submit(){
-  var pris = document.getElementById("pris");
+    addButton.addEventListener("click", function(event){
+     var pris = document.getElementById("pris");
   var fb = firebase.database();
   var btnNamn= document.getElementById("namn");
   var btnPris = document.getElementById("btnPris");
@@ -28,7 +28,8 @@ window.onload = function(){
   }
   fb.ref('uppgift4/').push(uppgift4);
  
-}
+})
+  
     
     firebase.database().ref('uppgift4/').on('child_added', function(snapshot, prevChildKey){
             console.log('Första gången eller ändring i databasen. prevChildKey: ' + prevChildKey);
