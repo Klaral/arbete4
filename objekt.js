@@ -6,7 +6,8 @@ window.onload = function(){
     var addButton = document.getElementById("addButton");
     var btnNamn = document.getElementById("btnNamn");
     var btnPris = document.getElementById("btnPris");
-    let inputAntalResultat = document.getElementById('inputAntalResultat');
+    var tableVisaNamn = document.getElementById("tableVisaNamn")
+    var inputAntalResultat = document.getElementById('inputAntalResultat');
     
     
     /**lägga till**/
@@ -25,7 +26,7 @@ window.onload = function(){
     });
     function addToTable(data) {
 				var tr = document.createElement('tr');
-				tr.innerHTML = `<td>${data.namn}</td> <td>${data.pris}</td> <td>${data.antal}</td> <td style="width: 50px; background-color: ${data.färg};"></td>`;
+				tr.innerHTML = `<td>${data.namn}</td> <td>${data.pris}</td> <td>${data.antal}</td>`;
 				tableVisaDjur.appendChild(tr);
 			}
 			
