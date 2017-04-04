@@ -22,11 +22,11 @@ window.onload = function(){
  // var currDate = new Date();
   var data = {
             namn: btnNamn.value,
-            pris: Number(pris)
+            pris: Number(pris.value)
   }
   fb.ref('items/').push(data);
  
-})
+}) 
   
     
    /**ny**/
