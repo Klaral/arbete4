@@ -18,23 +18,23 @@ window.onload = function(){
   var fb = firebase.database();
   var btnNamn= document.getElementById("inputNamn");
   var btnPris = document.getElementById("btnPris");
+        
  // var currDate = new Date();
-  var uppgift4 = {
+  var data = {
             namn: btnNamn.value,
-            pris: Number(btnPris.value)
+            pris: Number(inputPris.value)
   }
-  fb.ref('uppgift4/').push(uppgift4);
+  fb.ref('items/').push(data);
  
 })
   
     
-  
-    /**ny**/
+   /**ny**/
     function orderBy(key){
   var outputNumber = document.getElementById("inputAntalResultat");
   var fb = firebase.database();
 //do new stuff, put debugger before and then check on console
-  fb.ref('uppgift4/').orderByChild(`${key}`).limitToFirst(Number(outputNumber.value)).once('value')//get once all values, read all orderByChild("name")
+  fb.ref('items/').orderByChild(`${key}`).limitToFirst(Number(outputNumber.value)).once('value')//get once all values, read all orderByChild("name")
   .then(function(snapshot){
     //after snapshot that get all values then can clean
     var table = document.getElementById("tableVisaNamn");
