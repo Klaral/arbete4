@@ -23,8 +23,8 @@ window.onload = function(){
   var btnPris = document.getElementById("btnPris");
  // var currDate = new Date();
   var uppgift4 = {
-    namn: namn.value,
-            pris: pris.value
+    namn: btnNamn.value,
+            pris: btnPris.value
   }
   fb.ref('uppgift4/').push(uppgift4);
   debugger
