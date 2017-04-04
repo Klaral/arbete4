@@ -12,7 +12,7 @@ window.onload = function(){
   var fb = firebase.database();
   var btnNamn = document.getElementById("inputNamn");
   var btnPris = document.getElementById("btnPris");
-        var btn = document.getElementById("btnNamn");
+       
         
         
  // var currDate = new Date();
@@ -26,7 +26,7 @@ window.onload = function(){
   
     
    /**ny**/
-    
+     var btn = document.getElementById("btnNamn");
        btn.addEventListener("click", function(event){
        
   var outputNumber = document.getElementById("inputAntalResultat");
