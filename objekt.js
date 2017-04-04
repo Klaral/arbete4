@@ -28,12 +28,7 @@ window.onload = function(){
 })
   
     
-    firebase.database().ref('uppgift4/').on('child_added', function(snapshot, prevChildKey){
-            console.log('Första gången eller ändring i databasen. prevChildKey: ' + prevChildKey);
-				var data = snapshot.val();
-            addToTable(data);
-    });
-    
+  
     /**ny**/
     function orderBy(key){
   var outputNumber = document.getElementById("inputAntalResultat");
