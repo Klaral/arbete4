@@ -11,24 +11,7 @@ window.onload = function(){
   var fb = firebase.database();
   var btnNamn = document.getElementById("inputNamn");
   var btnPris = document.getElementById("btnPris");
-       
-        
-        
-
-  var data = {
-            namn: btnNamn.value,
-            pris: Number(pris.value)
-  }
-  fb.ref('items/').push(data);
- 
-}) 
-  
-    
-   /**ny**/
-     var btn = document.getElementById("btnNamn");
-       btn.addEventListener("click", function(event){
-       
-  var outputNumber = document.getElementById("inputAntalResultat");
+   btnPris.addEventListener("click", function(event){var outputNumber = document.getElementById("inputAntalResultat");
   var fb = firebase.database();
 
   fb.ref('items/').orderByChild('namn').limitToFirst(Number(outputNumber.value)).once('value')
@@ -46,7 +29,24 @@ window.onload = function(){
   })
   .catch(function(err){
   })
-       }) 
+       })   
+        
+        
+
+  var data = {
+            namn: btnNamn.value,
+            pris: Number(pris.value)
+  }
+  fb.ref('items/').push(data);
+ 
+}) 
+  
+    
+   /**ny**/
+     var btn = document.getElementById("btnNamn");
+       btn.addEventListener("click", function(event){
+       
+  
     
     
     
