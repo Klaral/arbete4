@@ -2,7 +2,6 @@ window.onload = function(){
      
     var addButton = document.getElementById("addButton");
     var tableVisaNamn = document.getElementById("tableVisaNamn")
-    var inputAntalResultat = document.getElementById('inputAntalResultat');
     
     
     /**lägga till**/
