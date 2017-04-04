@@ -24,13 +24,29 @@ window.onload = function(){
 				var data = snapshot.val();
             addToTable(data);
     });
-    function addToTable(data) {
-				var tr = document.createElement('tr');
-				tr.innerHTML = `<td>${data.namn}</td> <td>${data.pris}</td> <td>${data.antal}</td>`;
-				tableVisaDjur.appendChild(tr);
-			}
-			
-                                        
+    
+    /**ny**/
+    function orderBy(key){
+  var outputNumber = document.getElementById("inputAntalResultat");
+  var fb = firebase.database();
+//do new stuff, put debugger before and then check on console
+  fb.ref('Uppgift4/').orderByChild(`${key}`).limitToFirst(Number(outputNumber.value)).once('value')//get once all values, read all orderByChild("name")
+  .then(function(snapshot){
+    //after snapshot that get all values then can clean
+    var table = document.getElementById("tableVisaNamn");
+
+    table.innerHTML = "";
+    snapshot.forEach(function(child){
+      var tr = document.createElement("tr");//child is a object, child.key to get id
+      tr.innerHTML = `<td>${child.val().namn}</td>
+      <td>${child.val().pris}</td>`
+      table.appendChild(tr);
+      console.log(child.val())//object child/hela object  child.val  object
+    })
+  })
+  .catch(function(err){
+  })
+}                          
     
     
     
