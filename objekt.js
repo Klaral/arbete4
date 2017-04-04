@@ -1,8 +1,5 @@
 window.onload = function(){
-    
-    var provider = new firebase.auth.GithubAuthProvider(); 
-    var inputNamn = document.getElementById("inputNamn");
-    var inputPris = document.getElementById("inputPris");
+     
     var addButton = document.getElementById("addButton");
     var tableVisaNamn = document.getElementById("tableVisaNamn")
     var inputAntalResultat = document.getElementById('inputAntalResultat');
@@ -17,9 +14,9 @@ window.onload = function(){
         });
     });**/
     addButton.addEventListener("click", function(event){
-     var pris = document.getElementById("pris");
+     var pris = document.getElementById("inputPris");
   var fb = firebase.database();
-  var btnNamn= document.getElementById("namn");
+  var btnNamn= document.getElementById("inputNamn");
   var btnPris = document.getElementById("btnPris");
  // var currDate = new Date();
   var uppgift4 = {
@@ -59,37 +56,6 @@ window.onload = function(){
   .catch(function(err){
   })
 }                          
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
