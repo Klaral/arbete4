@@ -12,6 +12,8 @@ window.onload = function(){
   var fb = firebase.database();
   var btnNamn = document.getElementById("inputNamn");
   var btnPris = document.getElementById("btnPris");
+        var btn = document.getElementById("btnNamn");
+        
         
  // var currDate = new Date();
   var data = {
@@ -24,12 +26,13 @@ window.onload = function(){
   
     
    /**ny**/
-    function orderBy(key){
-        console.log(888)
+    
+       btn.addEventListener("click", function(event){
+       
   var outputNumber = document.getElementById("inputAntalResultat");
   var fb = firebase.database();
 
-  fb.ref('items/').orderByChild(`${key}`).limitToFirst(Number(outputNumber.value)).once('value')
+  fb.ref('items/').orderByChild('namn').limitToFirst(Number(outputNumber.value)).once('value')
   .then(function(snapshot){
     
     var table = document.getElementById("tableVisaNamn");
@@ -45,7 +48,7 @@ window.onload = function(){
   })
   .catch(function(err){
   })
-}                          
+       }) 
     
     
     
