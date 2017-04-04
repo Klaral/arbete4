@@ -22,7 +22,7 @@ window.onload = function(){
  // var currDate = new Date();
   var data = {
             namn: btnNamn.value,
-            pris: Number(inputPris.value)
+            pris: Number(pris.value)
   }
   fb.ref('items/').push(data);
  
