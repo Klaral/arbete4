@@ -10,7 +10,7 @@ window.onload = function(){
     addButton.addEventListener("click", function(event){
      var pris = document.getElementById("inputPris");
   var fb = firebase.database();
-  var btnNamn= document.getElementById("inputNamn");
+  var btnNamn = document.getElementById("inputNamn");
   var btnPris = document.getElementById("btnPris");
         
  // var currDate = new Date();
@@ -25,6 +25,7 @@ window.onload = function(){
     
    /**ny**/
     function orderBy(key){
+        console.log(888)
   var outputNumber = document.getElementById("inputAntalResultat");
   var fb = firebase.database();
 
