@@ -67,7 +67,7 @@
 			
 			
 			addButton.addEventListener('click', function(event) {
-				console.log('Klickat lägga till namn');
+				console.log('Namn lagts till');
 				firebase.database().ref('items/').push({
 					namn: namn.value,
 					antal: Number(antal.value)
