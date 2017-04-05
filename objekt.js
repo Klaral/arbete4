@@ -24,6 +24,7 @@
 				
 				addToTable(data);
 			});
+     
 			function addToTable(data) {
 				var tr = document.createElement('tr');
 				tr.innerHTML = `<td>${data.namn}</td> <td>${data.antal}</td>`;
@@ -44,6 +45,8 @@
 			}
 			sortFunction(btnSortNamn, 'namn');
 			sortFunction(btnSortPris, 'antal');
+     
+     visa.addEventListener()('click', function(event){}
 			
 			function limitToFirst(){
 			inputAntalResultat.addEventListener('keypress', function(event) {
