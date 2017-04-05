@@ -6,6 +6,7 @@
      var btnSortNamn = document.getElementById('btnSortNamn');
      var btnSortPris = document.getElementById('btnSortPris');
      var inputAntalResultat = document.getElementById('inputAntalResultat');
+     var visa = document.getElementById('visa');
 			
 			
 			addButton.addEventListener('click', function(event) {
