@@ -58,11 +58,11 @@
 
  window.addEventListener('load', function() {
 			 var namn = document.getElementById('inputNamn');
-                var antal = document.getElementById('inputAntal');
+                var antal = document.getElementById('inputPris');
                 var addButton = document.getElementById('addButton');
-			 var tableVisaDjur = document.getElementById('tableVisaDjur');
+			 var tableVisaNamn = document.getElementById('tableVisaNamn');
 			 var btnSortNamn = document.getElementById('btnSortNamn');
-                var btnSortAntal = document.getElementById('btnSortAntal');
+                var btnSortPris = document.getElementById('btnSortPris');
                 var inputAntalResultat = document.getElementById('inputAntalResultat');
 			
 			
@@ -84,12 +84,12 @@
 			function addAnimalToTable(data) {
 				var tr = document.createElement('tr');
 				tr.innerHTML = `<td>${data.namn}</td> <td>${data.antal}</td>`;
-				tableVisaDjur.appendChild(tr);
+				tableVisaNamn.appendChild(tr);
 			}
 			
 			function sortFunction(button, sortKey) {
 				button.addEventListener('click', function(event) {
-					tableVisaDjur.innerHTML = '';
+					tableVisaNamn.innerHTML = '';
 					//firebase.database().ref('djur/').off('value')
 					firebase.database().ref('djur/').orderByChild(sortKey)
 					.once('value', function(snapshot) {
@@ -100,13 +100,13 @@
 				})
 			}
 			sortFunction(btnSortNamn, 'namn');
-			sortFunction(btnSortAntal, 'antal');
+			sortFunction(btnSortPris, 'antal');
 			
 			
 			inputAntalResultat.addEventListener('keypress', function(event) {
 				if( event.keyCode == 13 ) {
 					var antal = Number(inputAntalResultat.value);
-					tableVisaDjur.innerHTML = '';
+					tableVisaNamn.innerHTML = '';
 					console.log('inputAntalResultat: antal=' + antal);
 					if( isNaN(antal) ) {
 						// varna användaren
