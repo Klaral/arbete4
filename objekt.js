@@ -104,7 +104,7 @@
 					});
 				})
 			}
-			sortFunction(btnSortNamn, 'namn');
+			/*sortFunction(btnSortNamn, 'namn');
 			sortFunction(btnSortFamilj, 'familj');
 			sortFunction(btnSortAntal, 'antal');
 			sortFunction(btnSortFärg, 'färg');
@@ -125,7 +125,7 @@
 						});
 					}
 				}
-			});
+			});*/
 		});
 	      
        
