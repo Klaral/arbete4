@@ -57,13 +57,13 @@
 
 
  window.addEventListener('load', function() {
-			var namn = document.getElementById('inputNamn');
-            var antal = document.getElementById('inputAntal');
-            var addButton = document.getElementById('addButton');
-			var tableVisaDjur = document.getElementById('tableVisaDjur');
-			var btnSortNamn = document.getElementById('btnSortNamn');
-            var btnSortAntal = document.getElementById('btnSortAntal');
-            var inputAntalResultat = document.getElementById('inputAntalResultat');
+			 var namn = document.getElementById('inputNamn');
+                var antal = document.getElementById('inputAntal');
+                var addButton = document.getElementById('addButton');
+			 var tableVisaDjur = document.getElementById('tableVisaDjur');
+			 var btnSortNamn = document.getElementById('btnSortNamn');
+                var btnSortAntal = document.getElementById('btnSortAntal');
+                var inputAntalResultat = document.getElementById('inputAntalResultat');
 			
 			
 			addButton.addEventListener('click', function(event) {
