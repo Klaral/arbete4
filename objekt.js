@@ -99,10 +99,9 @@
 					});
 				})
 			}
-			sortFunction(btnSortNamn, 'namn');
-			sortFunction(btnSortFamilj, 'familj');
+			/*sortFunction(btnSortNamn, 'namn');
 			sortFunction(btnSortAntal, 'antal');
-			sortFunction(btnSortFärg, 'färg');
+			
 			
 			inputAntalResultat.addEventListener('keypress', function(event) {
 				if( event.keyCode == 13 ) {
@@ -120,7 +119,7 @@
 						});
 					}
 				}
-			});
+			});*/
 		});
 	      
        
