@@ -83,7 +83,7 @@
 			});
 			function addAnimalToTable(data) {
 				var tr = document.createElement('tr');
-				tr.innerHTML = `<td>${data.namn}</td> <td>${data.familj}</td> <td>${data.antal}</td> <td style="width: 50px; background-color: ${data.färg};"></td>`;
+				tr.innerHTML = `<td>${data.namn}</td> <td>${data.antal}</td>`;
 				tableVisaDjur.appendChild(tr);
 			}
 			
