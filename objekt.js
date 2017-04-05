@@ -18,6 +18,15 @@
 					
 				});
 			});
+     
+     visaF.addEventListener('click', function(event){
+         limitToFirst();
+         inputAntalResultat.value = "";
+     });
+     visaS.addEventListener('click', function(event){
+         limitToLast();
+         inputAntalResultat.value = "";
+     });
 			
 			firebase.database().ref('items/').on('child_added', function(snapshot, prevChildKey) {
 				console.log('Första gången eller ändring i databasen. prevChildKey: ' + prevChildKey);
@@ -47,13 +56,12 @@
 			sortFunction(btnSortNamn, 'namn');
 			sortFunction(btnSortPris, 'antal');
      
-     visaF.addEventListener()('click', function(event){});
-     visaS.addEventListener()('click', function(event){});
+     
 			
 			function limitToFirst(){
 			inputAntalResultat.addEventListener('keypress', function(event) {
 				if( event.keyCode == 13 ) {
-					var antal = Number(inputAntalResultat.value);
+                    var antal = Number(inputAntalResultat.value);
 					tableVisaNamn.innerHTML = '';
 					console.log('inputAntalResultat: antal=' + antal);
 					if( isNaN(antal) ) {
