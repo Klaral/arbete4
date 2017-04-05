@@ -113,14 +113,14 @@
 				if( event.keyCode == 13 ) {
 					let antal = Number(inputAntalResultat.value);
 					tableVisaDjur.innerHTML = '';
-					console.log('inputAntalResultat: antal=' + antal);
+					//console.log('inputAntalResultat: antal=' + antal);
 					if( isNaN(antal) ) {
 						// varna användaren
 					} else {
 						firebase.database().ref('djur/').limitToFirst(antal)
 						.once('value', function(snapshot) {
 								snapshot.forEach( animalRef => {
-									//addAnimalToTable(animalRef.val());
+									addAnimalToTable(animalRef.val());
 								})
 						});
 					}
