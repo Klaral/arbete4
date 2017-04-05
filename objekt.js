@@ -99,7 +99,7 @@
 					});
 				})
 			}
-			/*sortFunction(btnSortNamn, 'namn');
+			sortFunction(btnSortNamn, 'namn');
 			sortFunction(btnSortAntal, 'antal');
 			
 			
@@ -119,7 +119,7 @@
 						});
 					}
 				}
-			});*/
+			});
 		});
 	      
        
