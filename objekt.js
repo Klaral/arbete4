@@ -60,7 +60,7 @@
 								})
 						});
 					}
-                    console.log("Limiterad till de " + antal + " första sökträffarna.");
+                    
                 }
                 
 				})
