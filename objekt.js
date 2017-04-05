@@ -81,7 +81,7 @@
 				
 				addToTable(data);
 			});
-			function addAnimalToTable(data) {
+			function addToTable(data) {
 				var tr = document.createElement('tr');
 				tr.innerHTML = `<td>${data.namn}</td> <td>${data.antal}</td>`;
 				tableVisaNamn.appendChild(tr);
