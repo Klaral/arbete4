@@ -58,7 +58,31 @@
      
      
 			
-			function limitToFirst(){
+		function limitToFirst(){
+            tableVisaNamn.innerHTML = '';
+            var antal = Number(inputAntalResultat.value);
+            
+            if(inputAntalResultat.value != ""){
+                firebase.database().ref('items/').limitToFirst(antal)
+					.once('value', function(snapshot) {
+						snapshot.forEach( itemRef => {
+							addToTable(itemRef.val());
+						})
+                    })
+            
+            }
+            console.log('inputAntalResultat: antal=' + antal);
+        }
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     /*function limitToFirst(){
 			inputAntalResultat.addEventListener('keypress', function(event) {
 				if( event.keyCode == 13 ) {
                     var antal = Number(inputAntalResultat.value);
@@ -78,7 +102,7 @@
                 }
                 
 				})
-			}
+			}*/
 		});
 	      
        
