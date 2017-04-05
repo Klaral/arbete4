@@ -78,8 +78,8 @@
 			firebase.database().ref('items/').on('child_added', function(snapshot, prevChildKey) {
 				console.log('Första gången eller ändring i databasen. prevChildKey: ' + prevChildKey);
 				var data = snapshot.val();
-				//console.log('data:', data);
-				addAnimalToTable(data);
+				
+				addToTable(data);
 			});
 			function addAnimalToTable(data) {
 				var tr = document.createElement('tr');
@@ -90,11 +90,11 @@
 			function sortFunction(button, sortKey) {
 				button.addEventListener('click', function(event) {
 					tableVisaNamn.innerHTML = '';
-					//firebase.database().ref('djur/').off('value')
+					
 					firebase.database().ref('items/').orderByChild(sortKey)
 					.once('value', function(snapshot) {
 						snapshot.forEach( animalRef => {
-							addAnimalToTable(animalRef.val());
+							addToTable(animalRef.val());
 						})
 					});
 				})
@@ -109,12 +109,12 @@
 					tableVisaNamn.innerHTML = '';
 					console.log('inputAntalResultat: antal=' + antal);
 					if( isNaN(antal) ) {
-						// varna användaren
+						
 					} else {
 						firebase.database().ref('items/').limitToFirst(antal)
 						.once('value', function(snapshot) {
 								snapshot.forEach( animalRef => {
-									addAnimalToTable(animalRef.val());
+									addToTable(animalRef.val());
 								})
 						});
 					}
