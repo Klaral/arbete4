@@ -44,7 +44,7 @@
 			sortFunction(btnSortNamn, 'namn');
 			sortFunction(btnSortPris, 'antal');
 			
-			
+			function limitToFirst(){
 			inputAntalResultat.addEventListener('keypress', function(event) {
 				if( event.keyCode == 13 ) {
 					var antal = Number(inputAntalResultat.value);
@@ -60,6 +60,9 @@
 								})
 						});
 					}
+                    console.log("Limiterad till de " + antal + " första sökträffarna.");
+                }
+                
 				}
 			});
 		});
