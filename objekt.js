@@ -57,25 +57,25 @@
 
 
  window.addEventListener('load', function() {
-			 var namn = document.getElementById('inputNamn');
-                var antal = document.getElementById('inputPris');
-                var addButton = document.getElementById('addButton');
-			 var tableVisaNamn = document.getElementById('tableVisaNamn');
-			 var btnSortNamn = document.getElementById('btnSortNamn');
-                var btnSortPris = document.getElementById('btnSortPris');
-                var inputAntalResultat = document.getElementById('inputAntalResultat');
+     var namn = document.getElementById('inputNamn');
+     var antal = document.getElementById('inputPris');
+     var addButton = document.getElementById('addButton');
+     var tableVisaNamn = document.getElementById('tableVisaNamn');
+     var btnSortNamn = document.getElementById('btnSortNamn');
+     var btnSortPris = document.getElementById('btnSortPris');
+     var inputAntalResultat = document.getElementById('inputAntalResultat');
 			
 			
 			addButton.addEventListener('click', function(event) {
-				console.log('Klickat lägga till djur');
-				firebase.database().ref('djur/').push({
+				console.log('Klickat lägga till namn');
+				firebase.database().ref('items/').push({
 					namn: namn.value,
 					antal: Number(antal.value)
 					
 				});
 			});
 			
-			firebase.database().ref('djur/').on('child_added', function(snapshot, prevChildKey) {
+			firebase.database().ref('items/').on('child_added', function(snapshot, prevChildKey) {
 				console.log('Första gången eller ändring i databasen. prevChildKey: ' + prevChildKey);
 				var data = snapshot.val();
 				//console.log('data:', data);
@@ -91,7 +91,7 @@
 				button.addEventListener('click', function(event) {
 					tableVisaNamn.innerHTML = '';
 					//firebase.database().ref('djur/').off('value')
-					firebase.database().ref('djur/').orderByChild(sortKey)
+					firebase.database().ref('items/').orderByChild(sortKey)
 					.once('value', function(snapshot) {
 						snapshot.forEach( animalRef => {
 							addAnimalToTable(animalRef.val());
@@ -111,7 +111,7 @@
 					if( isNaN(antal) ) {
 						// varna användaren
 					} else {
-						firebase.database().ref('djur/').limitToFirst(antal)
+						firebase.database().ref('items/').limitToFirst(antal)
 						.once('value', function(snapshot) {
 								snapshot.forEach( animalRef => {
 									addAnimalToTable(animalRef.val());
