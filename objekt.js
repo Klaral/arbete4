@@ -6,7 +6,8 @@
      var btnSortNamn = document.getElementById('btnSortNamn');
      var btnSortPris = document.getElementById('btnSortPris');
      var inputAntalResultat = document.getElementById('inputAntalResultat');
-     var visa = document.getElementById('visa');
+     var visaF = document.getElementById('visaF');
+     var visaS = document.getElementById('visaS');
 			
 			
 			addButton.addEventListener('click', function(event) {
@@ -46,7 +47,8 @@
 			sortFunction(btnSortNamn, 'namn');
 			sortFunction(btnSortPris, 'antal');
      
-     visa.addEventListener()('click', function(event){});
+     visaF.addEventListener()('click', function(event){});
+     visaS.addEventListener()('click', function(event){});
 			
 			function limitToFirst(){
 			inputAntalResultat.addEventListener('keypress', function(event) {
