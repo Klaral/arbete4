@@ -71,39 +71,31 @@
                     })
             
             }
-            console.log('inputAntalResultat: antal=' + antal);
+            console.log('inputAntalResultat: antal=' + antal + 'första');
+        }
+     
+     
+     
+     function limitToLast(){
+            tableVisaNamn.innerHTML = '';
+            var antal = Number(inputAntalResultat.value);
+            
+            if(inputAntalResultat.value != ""){
+                firebase.database().ref('items/').limitToLast(antal)
+					.once('value', function(snapshot) {
+						snapshot.forEach( itemRef => {
+							addToTable(itemRef.val());
+						})
+                    })
+            
+            }
+            console.log('inputAntalResultat: antal=' + antal + 'sista');
         }
      
      
      
      
-     
-     
-     
-     
-     
-     /*function limitToFirst(){
-			inputAntalResultat.addEventListener('keypress', function(event) {
-				if( event.keyCode == 13 ) {
-                    var antal = Number(inputAntalResultat.value);
-					tableVisaNamn.innerHTML = '';
-					console.log('inputAntalResultat: antal=' + antal);
-					if( isNaN(antal) ) {
-						
-					} else {
-						firebase.database().ref('items/').limitToFirst(antal)
-						.once('value', function(snapshot) {
-								snapshot.forEach( itemRef => {
-									addToTable(itemRef.val());
-								})
-						});
-					}
-                    
-                }
-                
-				})
-			}*/
-		});
+ });
 	      
        
        
