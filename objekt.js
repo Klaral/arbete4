@@ -1,7 +1,7 @@
 /* window.onload = function(){
      
     var addButton = document.getElementById("addButton");
-    //var tableVisaNamn = document.getElementById("tableVisaNamn");
+    var tableVisaNamn = document.getElementById("tableVisaNamn");
     var inputAntalResultat = document.getElementById("inputAntalResultat");
     
     
@@ -9,18 +9,18 @@
    
 /* addButton.addEventListener("click", function(event){
     var pris = document.getElementById("inputPris");
-  var fb = firebase.database();
-  var btnNamn = document.getElementById("inputNamn");
-  var btnPris = document.getElementById("btnPris");
+    var fb = firebase.database();
+    var btnNamn = document.getElementById("inputNamn");
+    var btnPris = document.getElementById("btnPris");
    btnPris.addEventListener("click", function(event){var outputNumber = document.getElementById("inputAntalResultat");
-  var fb = firebase.database();
+    var fb = firebase.database();
 
   fb.ref('items/').orderByChild('namn').limitToFirst(Number(inputAntalResultat.value)).once('value')
   .then(function(snapshot){
     
-    var table = document.getElementById("tableVisaNamn");
+    //var table = document.getElementById("tableVisaNamn");
 
-    table.innerHTML = "";
+    tableVisaNamn.innerHTML = "";
     snapshot.forEach(function(child){
       var tr = document.createElement("tr");//child is a object, child.key to get id
       tr.innerHTML = `<td>${child.val().namn}</td> <td>${child.val().pris}</td>`
@@ -58,25 +58,20 @@
 
  window.addEventListener('load', function() {
 			var namn = document.getElementById('inputNamn');
-			var familj = document.getElementById('inputFamilj');
-			var antal = document.getElementById('inputAntal');
-			var färg = document.getElementById('inputFärg');
-			var addButton = document.getElementById('addButton');
+            var antal = document.getElementById('inputAntal');
+            var addButton = document.getElementById('addButton');
 			var tableVisaDjur = document.getElementById('tableVisaDjur');
 			var btnSortNamn = document.getElementById('btnSortNamn');
-			var btnSortFamilj = document.getElementById('btnSortFamilj');
-			var btnSortAntal = document.getElementById('btnSortAntal');
-			var btnSortFärg = document.getElementById('btnSortFärg');
-			var inputAntalResultat = document.getElementById('inputAntalResultat');
+            var btnSortAntal = document.getElementById('btnSortAntal');
+            var inputAntalResultat = document.getElementById('inputAntalResultat');
 			
 			
 			addButton.addEventListener('click', function(event) {
 				console.log('Klickat lägga till djur');
 				firebase.database().ref('djur/').push({
 					namn: namn.value,
-					familj: familj.value,
-					antal: Number(antal.value),
-					färg: färg.value
+					antal: Number(antal.value)
+					
 				});
 			});
 			
@@ -104,7 +99,7 @@
 					});
 				})
 			}
-			/*sortFunction(btnSortNamn, 'namn');
+			sortFunction(btnSortNamn, 'namn');
 			sortFunction(btnSortFamilj, 'familj');
 			sortFunction(btnSortAntal, 'antal');
 			sortFunction(btnSortFärg, 'färg');
@@ -125,7 +120,7 @@
 						});
 					}
 				}
-			});*/
+			});
 		});
 	      
        
