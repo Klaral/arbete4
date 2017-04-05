@@ -93,8 +93,8 @@
 					
 					firebase.database().ref('items/').orderByChild(sortKey)
 					.once('value', function(snapshot) {
-						snapshot.forEach( animalRef => {
-							addToTable(animalRef.val());
+						snapshot.forEach( itemRef => {
+							addToTable(itemRef.val());
 						})
 					});
 				})
@@ -113,8 +113,8 @@
 					} else {
 						firebase.database().ref('items/').limitToFirst(antal)
 						.once('value', function(snapshot) {
-								snapshot.forEach( animalRef => {
-									addToTable(animalRef.val());
+								snapshot.forEach( itemRef => {
+									addToTable(itemRef.val());
 								})
 						});
 					}
