@@ -46,7 +46,7 @@
 			sortFunction(btnSortNamn, 'namn');
 			sortFunction(btnSortPris, 'antal');
      
-     visa.addEventListener()('click', function(event){}
+     visa.addEventListener()('click', function(event){});
 			
 			function limitToFirst(){
 			inputAntalResultat.addEventListener('keypress', function(event) {
