@@ -113,7 +113,7 @@
 				if( event.keyCode == 13 ) {
 					let antal = Number(inputAntalResultat.value);
 					tableVisaDjur.innerHTML = '';
-					console.log('inputAntalResultat: antal=' + antal);
+					//console.log('inputAntalResultat: antal=' + antal);
 					if( isNaN(antal) ) {
 						// varna användaren
 					} else {
